@@ -338,6 +338,7 @@ function loop() {
 
 function tick(dt){
     ctx.fillStyle = "rgba(255, 255, 255, "+ (10*dt) +")";
+    ctx.fillStyle = "rgba(255, 255, 255, 0)";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
 
     quadtree.update_particles(function(p){
@@ -392,5 +393,5 @@ function tick(dt){
 
     ctx.strokeStyle = "rgba(0, 0, 0, 0.02)";
     ctx.setLineDash([3, 3]);
-    draw_quadtree_rec(quadtree.root, quadtree.size, new vec2(0, 0), ctx); // lily loves kai
+    draw_quadtree_rec(quadtree.root, quadtree.size, new vec2(0, 0), ctx);
 }

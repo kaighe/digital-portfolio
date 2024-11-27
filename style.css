@@ -1,15 +1,32 @@
-body {
-    font-family: "Ubuntu", serif;
-    margin: 0;
-
+.light-mode{
     --background-primary: #FFFFFF;
     --background-secondary: #FFFFFF;
     --text-primary: #020817;
-    --text-secondary: #1c7dd1;
+    --text-secondary: #007acc;
+    --text-light: #5c5c5c;
     --text-selection: #69a2d4;
     --color-primary: #b2b2b2;
+    --button-highlight: #f2f2f2;
+    --button-click: #dfdfdf;
+}
 
-    height: 1000px;
+.dark-mode{
+    --background-primary: #252526;
+    --background-secondary: #252526;
+    --text-primary: #d2d2d2;
+    --text-secondary: #007acc;
+    --text-light: #7a7a7a;
+    --text-selection: #69a2d4;
+    --color-primary: #787878;
+    --button-highlight: #373737;
+    --button-click: #484849;
+}
+
+body {
+    background-color: var(--background-primary);
+    font-family: "Ubuntu", serif;
+    margin: 0;
+    color: var(--text-primary);
 }
 
 h1{
@@ -48,7 +65,7 @@ p{
 }
 
 #nav-bar.open {
-    width: 200px;
+    width: 250px;
 }
 
 #nav-bar.top {
@@ -73,37 +90,23 @@ p{
 }
 
 .nav-bar-item {
+    user-select: none;
     cursor: pointer;
     transition: opacity 0.3s;
+    background-color: transparent;
+    border-radius: 5px;
+    padding: 4px;
+    padding-left: 5px;
+    padding-right: 5px;
+    transition: opacity 0.3s, background-color 0.15s, transform 0.07s;
 }
-
-#dropdown-options {
-    width: 100px;
-    height: 0;
-    position: fixed;
-    z-index: 1;
-    overflow: hidden;
-
-    background-color: var(--background-primary);
-    border: 1px solid var(--color-primary);
-    border-radius: 7px;
-    font-size: 10pt;
-    opacity: 100%;
-    transform-origin: center center;
-
-    transition: opacity 0.2s, transform 0.2s;
+.nav-bar-item:hover{
+    background-color: var(--button-highlight);
 }
-#dropdown-options.inactive{
-    opacity: 0;
-    transform: scale(70%, 70%) translate(0, 20px);
+.nav-bar-item:active{
+    background-color: var(--button-click);
+    transform: scale(95%);
 }
-#dropdown-options-container {
-    border: 1px solid transparent;
-}
-#dropdown-options-container > * {
-    margin: 5px;
-}
-
 
 #landing {
     height: 100vh;
@@ -181,7 +184,7 @@ p{
 }
 
 #main-body{
-    padding-top: 200px;
+    padding-top: 100px;
     width: calc(min(900px, 90%));
     /* border: 1px solid black; */
     margin-left: 50%;
@@ -194,4 +197,34 @@ p{
     padding-left: 20px;
     border: 1px solid var(--color-primary);
     border-radius: 7px;
+}
+
+#skill-holder{
+    display: grid;
+    gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    padding-bottom: 60px;
+}
+
+.skill-box{
+    display: flex;
+    justify-content: space-between;
+    padding: 8px;
+    border: 1px solid var(--color-primary);
+    border-radius: 7px;
+    transition: transform 0.2s;
+}
+
+.skill-box:hover{
+    transform: scale(105%);
+}
+
+.skill-name{
+    font-size: 14pt;
+}
+
+.skill-time{
+    text-align: right;
+    color: var(--text-light);
 }
