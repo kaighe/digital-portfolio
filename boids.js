@@ -321,6 +321,9 @@ for(var i = 0; i < BOID_COUNT; i++){
     quadtree.add(particle);
 }
 
+ctx.fillStyle = "rgba(255, 255, 255, 0.05)";
+ctx.fillRect(0, 0, canvas.width, canvas.height);
+
 var lastUpdate = Date.now();
 var tick_count = 0;
 var fps = 50;
@@ -398,6 +401,8 @@ function tick(dt){
     // ctx.fillRect(0, 0, canvas.width, canvas.height);
 
     ctx_buffer.clearRect(0, 0, canvas_buffer.width, canvas_buffer.height);
+    ctx_buffer.globalCompositeOperation = "source-over";
+    ctx_buffer.globalCompositeOperation = "subtract";
     ctx_buffer.globalAlpha = 0.9;
     ctx_buffer.drawImage(canvas, 0, 0);
 
