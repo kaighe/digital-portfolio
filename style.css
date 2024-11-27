@@ -89,11 +89,11 @@ p{
 #nav-bar > #nav-bar-icon{
     position: absolute;
     transition: all 0.3s;
-    pointer-events: none;
 }
 #nav-bar.open > #nav-bar-icon{
     opacity: 0;
     transform: translate(-100px, 0) rotate(-45deg);
+    pointer-events: none;
 }
 
 .nav-bar-item {
@@ -107,7 +107,7 @@ p{
     padding-right: 5px;
     transition: opacity 0.3s, background-color 0.15s, transform 0.07s;
 }
-.nav-bar-item:hover{
+body:not(.mobile) .nav-bar-item:hover{
     background-color: var(--button-highlight);
 }
 .nav-bar-item:active{
@@ -249,7 +249,7 @@ body.dark-theme #boid-canvas{
     min-width: 175px;
 }
 
-.skill-box:hover{
+body:not(.mobile) .skill-box:hover{
     transform: scale(105%);
 }
 
