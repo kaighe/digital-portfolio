@@ -29,10 +29,6 @@ body {
     color: var(--text-primary);
 }
 
-h1{
-    /* text-align: center; */
-}
-
 p{
     line-height: 1.6;
 }
@@ -161,6 +157,10 @@ p{
     
     overflow: hidden;
     mask-image: linear-gradient(0deg, rgba(255,255,255,0) 0px, rgba(255,255,255,1) 100px);
+}
+
+body.dark-mode #boid-canvas{
+    filter: invert();
 }
 
 #fps-counter {

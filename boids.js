@@ -18,6 +18,11 @@ const BOID_MOUSE_RANGE = 80;
 const canvas = $("#boid-canvas")[0];
 const ctx = canvas.getContext("2d");
 
+const canvas_buffer = document.createElement("canvas");
+canvas_buffer.width = canvas.width;
+canvas_buffer.height = canvas.height;
+const ctx_buffer = canvas_buffer.getContext("2d");
+
 Number.prototype.mod = function (n) {
     "use strict";
     return ((this % n) + n) % n;
@@ -30,6 +35,8 @@ function clamp(a, min, max){
 $(window).on("resize", function(){
     canvas.width = canvas.clientWidth;
     canvas.height = canvas.clientHeight;
+    canvas_buffer.width = canvas.width;
+    canvas_buffer.height = canvas.height;
 });
 $(window).trigger("resize");
 
@@ -163,7 +170,6 @@ class QuadNode {
 class QuadTree {
     constructor(width, height, min_cell_size){
         this.max_depth = Math.ceil(-Math.log2(min_cell_size/Math.max(width, height)));
-        console.log((min_cell_size/(Math.max(width, height)*Math.pow(0.5, this.max_depth))));
         this.size = Math.max(width, height)*(min_cell_size/(Math.max(width, height)*Math.pow(0.5, this.max_depth)));
         this.width = width;
         this.height = height;
@@ -337,10 +343,6 @@ function loop() {
 
 
 function tick(dt){
-    ctx.fillStyle = "rgba(255, 255, 255, "+ (10*dt) +")";
-    ctx.fillStyle = "rgba(255, 255, 255, 0)";
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
-
     quadtree.update_particles(function(p){
         if(p.data.id%2 != tick_count%2) return
         var nodes = quadtree.get_nodes_in_range(p.position, BOID_VISUAL_RANGE);
@@ -391,6 +393,17 @@ function tick(dt){
         }
     });
 
+    // ctx.fillStyle = "rgba(255, 255, 255, "+ (10*dt) +")";
+    // ctx.fillStyle = "rgba(255, 255, 255, 0)";
+    // ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+    ctx_buffer.clearRect(0, 0, canvas_buffer.width, canvas_buffer.height);
+    ctx_buffer.globalAlpha = 0.9;
+    ctx_buffer.drawImage(canvas, 0, 0);
+
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+    ctx.drawImage(canvas_buffer, 0, 0);
+    
     ctx.strokeStyle = "rgba(0, 0, 0, 0.02)";
     ctx.setLineDash([3, 3]);
     draw_quadtree_rec(quadtree.root, quadtree.size, new vec2(0, 0), ctx);
