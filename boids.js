@@ -162,10 +162,11 @@ class QuadNode {
 
 class QuadTree {
     constructor(width, height, min_cell_size){
-        this.size = Math.max(width, height);
+        this.max_depth = Math.ceil(-Math.log2(min_cell_size/Math.max(width, height)));
+        console.log((min_cell_size/(Math.max(width, height)*Math.pow(0.5, this.max_depth))));
+        this.size = Math.max(width, height)*(min_cell_size/(Math.max(width, height)*Math.pow(0.5, this.max_depth)));
         this.width = width;
         this.height = height;
-        this.max_depth = Math.ceil(-Math.log2(min_cell_size/this.size));
         this.root = new QuadNode(null, new vec2(0, 0), this.size);
     }
 
@@ -307,7 +308,7 @@ $("#landing").on("mouseleave", function(e){
     mouse_pos.y = -1000;
 })
 
-const quadtree = new QuadTree(canvas.width, canvas.height, 65);
+const quadtree = new QuadTree(canvas.width, canvas.height, 60);
 for(var i = 0; i < BOID_COUNT; i++){
     var particle = new Particle(Math.random()*canvas.width, Math.random()*canvas.height, "rgba(0, 0, 0, 0.1)");
     particle.data.id = i;
@@ -328,7 +329,9 @@ function loop() {
     if(dt != 0) fps = Math.round((fps + (1/dt - fps)*0.05)*10)/10;
     $("#fps-counter")[0].innerText = fps+"fps";
 
-    tick(dt);
+    if(canvas.getBoundingClientRect(true).bottom > 0){
+        tick(dt);
+    }
     requestAnimationFrame(loop);
 }
 
