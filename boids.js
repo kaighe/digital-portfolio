@@ -321,7 +321,7 @@ for(var i = 0; i < BOID_COUNT; i++){
     quadtree.add(particle);
 }
 
-ctx.fillStyle = "rgba(255, 255, 255, 0.05)";
+ctx.fillStyle = "rgba(255, 255, 255, 0.1)";
 ctx.fillRect(0, 0, canvas.width, canvas.height);
 
 var lastUpdate = Date.now();
