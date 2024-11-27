@@ -161,11 +161,11 @@ class QuadNode {
 }
 
 class QuadTree {
-    constructor(width, height, max_depth){
+    constructor(width, height, min_cell_size){
         this.size = Math.max(width, height);
         this.width = width;
         this.height = height;
-        this.max_depth = max_depth;
+        this.max_depth = Math.ceil(-Math.log2(min_cell_size/this.size));
         this.root = new QuadNode(null, new vec2(0, 0), this.size);
     }
 
@@ -307,7 +307,7 @@ $("#landing").on("mouseleave", function(e){
     mouse_pos.y = -1000;
 })
 
-const quadtree = new QuadTree(canvas.width, canvas.height, 4);
+const quadtree = new QuadTree(canvas.width, canvas.height, 65);
 for(var i = 0; i < BOID_COUNT; i++){
     var particle = new Particle(Math.random()*canvas.width, Math.random()*canvas.height, "rgba(0, 0, 0, 0.1)");
     particle.data.id = i;
