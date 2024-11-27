@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kai Albertson</title>
 
+    <script type="module" src="theme_check.js"></script>
+
     <link rel="stylesheet" href="style.css">
     <script src="scripts/jquery-3.7.1.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,12 +20,15 @@
     </template>
 </head>
 
-<body class="dark-mode">
+<body class="notransition">
     <div id="nav-bar" class="top open">
         <img src="icons/menu.svg" id="nav-bar-icon"/>
         <div class="nav-bar-item">Home</div>
         <div class="nav-bar-item">Projects</div>
-        <img class="nav-bar-item" src="icons/light_mode.svg" alt="">
+        <div class="nav-bar-item" id="theme-toggle" style="width: 24px; height: 24px;">
+            <img src="icons/light_mode.svg" class="notransition" alt="">
+            <img src="icons/dark_mode.svg" class="notransition" alt="">
+        </div>
     </div>
 
     <div id="landing">

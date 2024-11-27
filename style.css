@@ -1,4 +1,11 @@
-.light-mode{
+.notransition {
+    -webkit-transition: none !important;
+    -moz-transition: none !important;
+    -o-transition: none !important;
+    transition: none !important;
+}
+
+body.light-theme{
     --background-primary: #FFFFFF;
     --background-secondary: #FFFFFF;
     --text-primary: #020817;
@@ -10,14 +17,14 @@
     --button-click: #dfdfdf;
 }
 
-.dark-mode{
+body.dark-theme{
     --background-primary: #252526;
     --background-secondary: #252526;
     --text-primary: #d2d2d2;
     --text-secondary: #007acc;
     --text-light: #7a7a7a;
     --text-selection: #69a2d4;
-    --color-primary: #787878;
+    --color-primary: #646464;
     --button-highlight: #373737;
     --button-click: #484849;
 }
@@ -27,6 +34,8 @@ body {
     font-family: "Ubuntu", serif;
     margin: 0;
     color: var(--text-primary);
+
+    transition: background-color 0.5s, color 0.5s, border-color 0.5s;
 }
 
 p{
@@ -39,11 +48,12 @@ p{
 }
 
 #nav-bar {
+    position: fixed;
     top: 15px;
     left: 15px;
-    position: fixed;
     width: 50px;
     height: 50px;
+    z-index: 100;
 
     border: 1px solid var(--color-primary);
     border-radius: 25px;
@@ -79,6 +89,7 @@ p{
 #nav-bar > #nav-bar-icon{
     position: absolute;
     transition: all 0.3s;
+    pointer-events: none;
 }
 #nav-bar.open > #nav-bar-icon{
     opacity: 0;
@@ -157,9 +168,10 @@ p{
     
     overflow: hidden;
     mask-image: linear-gradient(0deg, rgba(255,255,255,0) 0px, rgba(255,255,255,1) 100px);
+    filter: brightness(50%);
 }
 
-body.dark-mode #boid-canvas{
+body.dark-theme #boid-canvas{
     filter: invert();
 }
 
@@ -168,7 +180,7 @@ body.dark-mode #boid-canvas{
     top: 0;
     right: 0;
     margin: 5px;
-    color: var(--color-primary);
+    color: var(--text-light);
     font-size: 9pt;
 }
 
@@ -199,12 +211,32 @@ body.dark-mode #boid-canvas{
     border-radius: 7px;
 }
 
-#skill-holder{
-    display: grid;
-    gap: 10px;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr;
-    padding-bottom: 60px;
+@media (min-width: 905px) {
+    #skill-holder{
+        display: grid;
+        gap: 10px;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr;
+        padding-bottom: 60px;
+    }
+}
+@media (max-width: 905px) {
+    #skill-holder{
+        display: grid;
+        gap: 10px;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr;
+        padding-bottom: 60px;
+    }
+}
+@media (max-width: 455px) {
+    #skill-holder{
+        display: grid;
+        gap: 10px;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+        padding-bottom: 60px;
+    }
 }
 
 .skill-box{
@@ -214,6 +246,7 @@ body.dark-mode #boid-canvas{
     border: 1px solid var(--color-primary);
     border-radius: 7px;
     transition: transform 0.2s;
+    min-width: 175px;
 }
 
 .skill-box:hover{
@@ -227,4 +260,31 @@ body.dark-mode #boid-canvas{
 .skill-time{
     text-align: right;
     color: var(--text-light);
+}
+
+#theme-toggle{
+    overflow: hidden;
+    position: relative;
+}
+
+#theme-toggle > img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: transform 0.2s;
+}
+
+body.light-theme #theme-toggle > img:nth-child(2){
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(calc(-50% + 30px), -50%);
+}
+
+body.dark-theme #theme-toggle > img:nth-child(1){
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(calc(-50% - 30px), -50%);
 }
