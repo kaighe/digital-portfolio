@@ -1,0 +1,34 @@
+{
+    "projects":[
+        {
+            "title":"Test Project",
+            "description":"This is a test project",
+            "date":"2024/11/25",
+            "languages":[
+                "Python",
+                "JavaScript"
+            ],
+            "links":[
+                {"icon":"github-mark.svg", "text":"Github", "href":"https://github.com"}
+            ]
+        },
+        {
+            "title":"Test Project #2",
+            "description":"This is a test project (again)",
+            "date":"2024/11/25",
+            "languages":[
+                "Python",
+                "JavaScript"
+            ],
+            "links":[
+                {"icon":"github-mark.svg", "text":"Github", "href":"https://github.com"}
+            ]
+        }
+    ],
+    "skills":[
+        {
+            "name":"Python",
+            "proficiency": 4.5
+        }
+    ]
+}
