@@ -37,8 +37,10 @@ $(".flipboard-text > span").mouseenter(function(){
 
 $(".flipboard-text").each(function(){
     for(var i = 0; i < this.children.length; i++){
-        this.children[i].classList.add("flipping");
-        flip(this.children[i], 500+i*80, this.children[i].innerText);
+        if(this.children[i].tagName == "SPAN"){
+            this.children[i].classList.add("flipping");
+            flip(this.children[i], 500+i*80, this.children[i].innerText);
+        }
     }
 });
 

@@ -42,9 +42,21 @@ p{
     line-height: 1.6;
 }
 
+hr {
+    border-left: none;
+    border-right: none;
+    border-bottom: none;
+    border-top: 1px solid var(--color-primary);
+}
+
 *::selection {
     color: var(--background-primary);
     background: var(--text-selection);
+}
+
+.icon {
+    width: 24px;
+    height: 24px;
 }
 
 #nav-bar {
@@ -133,6 +145,7 @@ body:not(.mobile) .nav-bar-item:hover{
 }
 
 .flipboard-text {
+    position: relative;
     font-family: "OCR A Std", monospace;
 }
 
@@ -141,6 +154,7 @@ body:not(.mobile) .nav-bar-item:hover{
     overflow: hidden;
     height: 40px;
     width: 100%;
+    z-index: -1;
     padding-top: -20px;
     mask-image: linear-gradient(0deg, rgba(255,255,255,0) 0px, rgba(255,255,255,1) 10px, rgba(255,255,255,1) 30px, rgba(255,255,255,0) 40px);
 }
@@ -316,4 +330,64 @@ html:lang(fr) *:lang(en):not(html){
 }
 html:lang(en) *:lang(fr):not(html){
     display: none;
+}
+
+.socials-picker{
+    position: absolute;
+    top: calc(50% + 1px);
+    left: -52px;
+    transform: translate(0, -50%);
+    width: 32px;
+    height: 32px;
+    padding-left: 2px;
+    padding-top: 2px;
+
+    border: 1px solid var(--color-primary);
+    border-radius: 18px;
+    background-color: var(--background-primary);
+    overflow: hidden;
+    transition: height 0.2s, background-color 0.5s;
+}
+@media (max-width:420px) {
+    .socials-picker{
+        top: 85px;
+        left: 50%;
+        transform: translate(-50%, 0);
+    }
+}
+.socials-picker:hover{
+    height: 98px;
+}
+.socials-picker>img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: transform 0.2s;
+}
+.socials-picker:hover>img{
+    transform: translate(-50px, -50%);
+}
+.socials-picker>a{
+    position: relative;
+    display: block;
+    margin-bottom: 3px;
+    height: 30px;
+    width: 30px;
+    transition: margin-left 0.2s;
+    
+    border-radius: 17px;
+    transition: transform 0.2s, background-color 0.2s;
+}
+.socials-picker>a:hover{
+    background-color: var(--button-highlight);
+}
+.socials-picker:not(:hover)>a{
+    transform: translate(40px, -50%);
+}
+.socials-picker>a>img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-49%, -50%);
 }
