@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Kai Albertson</title>
 
-    <script type="module" src="theme_check.js"></script>
-
     <link rel="stylesheet" href="style.css">
     <script src="scripts/jquery-3.7.1.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
+
+    <script type="module" src="theme_check.js"></script>
+    <script type="module" src="language.js"></script>
 
     <template id="template-skill-box">
         <div class="skill-box">
@@ -23,19 +24,26 @@
 <body class="notransition">
     <div id="nav-bar" class="top open">
         <img src="icons/menu.svg" id="nav-bar-icon"/>
-        <div class="nav-bar-item">Home</div>
-        <div class="nav-bar-item">Projects</div>
+        <div class="nav-bar-item" lang="en">Home</div>
+        <div class="nav-bar-item" lang="fr">Accueil</div>
+        <div class="nav-bar-item" lang="en">Projects</div>
+        <div class="nav-bar-item" lang="fr">Projets</div>
         <div class="nav-bar-item" id="theme-toggle" style="width: 24px; height: 24px;">
             <img src="icons/light_mode.svg" class="notransition" alt="">
             <img src="icons/dark_mode.svg" class="notransition" alt="">
+        </div>
+        <div class="nav-bar-item" id="language-toggle" style="width: 24px; height: 24px;">
+            <div>EN</div>
+            <div>FR</div>
         </div>
     </div>
 
     <div id="landing">
         <div id="fps-counter">60fps</div>
-        <p>Hey, I'm</p>
+        <p lang="en">Hey, I'm</p>
+        <p lang="fr">Salut, je suis</p>
         <h1 class="flipboard-text"><span>K</span><span>a</span><span>i</span> <span>A</span><span>l</span><span>b</span><span>e</span><span>r</span><span>t</span><span>s</span><span>o</span><span>n</span></h1>
-        <div class="rotating-text">
+        <div class="rotating-text" lang="en">
             <div>
                 <p>Computer Science Student</p>
                 <p>Software Developer</p>
@@ -47,49 +55,64 @@
                 <p>Computer Science Student</p>
             </div>
         </div>
+        <div class="rotating-text" lang="fr">
+            <div>
+                <p>Étudiant en informatique</p>
+                <p>Développeur de logiciels</p>
+                <p>Vététiste</p>
+                <p>Développeur de jeux</p>
+                <p>Skieur</p>
+                <p>Développeur front end?</p>
+                <p>Un gars vraiment cool</p>
+                <p>Étudiant en informatique</p>
+            </div>
+        </div>
         <canvas id="boid-canvas"></canvas>
     </div>
 
     <div id="main-body">
-        <h1>Proficient technologies</h1>
+        <h1 lang="en">Proficient technologies</h1>
+        <h1 lang="fr">Technologies compétentes</h1>
         <div id="skill-holder">
             <div class="skill-box">
                 <div class="skill-name">Python</div>
-                <div class="skill-time">11 years</div>
+                <div class="skill-time">11 <span lang="en">years</span><span lang="fr">années</span></div>
             </div>
             <div class="skill-box">
                 <div class="skill-name">C#</div>
-                <div class="skill-time">4 years</div>
+                <div class="skill-time">4 <span lang="en">years</span><span lang="fr">années</span></div>
             </div>
             <div class="skill-box">
                 <div class="skill-name">C++</div>
-                <div class="skill-time">3 years</div>
+                <div class="skill-time">3 <span lang="en">years</span><span lang="fr">années</span></div>
             </div>
             <div class="skill-box">
                 <div class="skill-name">HTML</div>
-                <div class="skill-time">4 years</div>
+                <div class="skill-time">4 <span lang="en">years</span><span lang="fr">années</span></div>
             </div>
             <div class="skill-box">
                 <div class="skill-name">CSS</div>
-                <div class="skill-time">4 years</div>
+                <div class="skill-time">4 <span lang="en">years</span><span lang="fr">années</span></div>
             </div>
             <div class="skill-box">
                 <div class="skill-name">JavaScript</div>
-                <div class="skill-time">4 years</div>
+                <div class="skill-time">4 <span lang="en">years</span><span lang="fr">années</span></div>
             </div>
             <div class="skill-box">
                 <div class="skill-name">Git</div>
-                <div class="skill-time">6 years</div>
+                <div class="skill-time">6 <span lang="en">years</span><span lang="fr">années</span></div>
             </div>
             <div class="skill-box">
-                <div class="skill-name">AVR Assembly</div>
-                <div class="skill-time">1 year</div>
+                <div class="skill-name" lang="en">AVR Assembly</div>
+                <div class="skill-name" lang="fr">Assemblage AVR</div>
+                <div class="skill-time">1 <span lang="en">years</span><span lang="fr">an</span></div>
             </div>
         </div>
         <div class="content-box">
-            <h1>About Me</h1>
+            <h1 lang="en">About me</h1>
+            <h1 lang="fr">Sur moi</h1>
             <hr>
-            <p>
+            <p lang="en">
                 I am a Canadian second year computer science student at the University of 
                 Victoria with 11 years of programming experience and a proficiency in 
                 Python, although I pride myself on my ability to learn  new technology 
@@ -97,6 +120,15 @@
                 and taught non-profit programming courses to elementary students, developed 
                 educational tools used by several different schools, and have professional 
                 work experience as a software developer.
+            </p>
+            <p lang="fr">
+                Je suis un étudiant canadien en deuxième année d'informatique à l'Université de
+                Victoria avec 11 ans d'expérience en programmation et une maîtrise de
+                Python, mais je suis fier de ma capacité à apprendre de nouvelles technologies
+                extrêmement rapidement. Je parle anglais comme langue maternelle et français couramment, j'ai planifié
+                et enseigné des cours de programmation à but non lucratif à des élèves du primaire, développé
+                des outils pédagogiques utilisés par plusieurs écoles différentes et j'ai une
+                expérience professionnelle en tant que développeur de logiciels.
             </p>
         </div>
     </div>

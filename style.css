@@ -71,7 +71,7 @@ p{
 }
 
 #nav-bar.open {
-    width: 250px;
+    width: 320px;
 }
 
 #nav-bar.top {
@@ -266,7 +266,6 @@ body:not(.mobile) .skill-box:hover{
     overflow: hidden;
     position: relative;
 }
-
 #theme-toggle > img{
     position: absolute;
     top: 50%;
@@ -274,17 +273,47 @@ body:not(.mobile) .skill-box:hover{
     transform: translate(-50%, -50%);
     transition: transform 0.2s;
 }
-
 body.light-theme #theme-toggle > img:nth-child(2){
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(calc(-50% + 30px), -50%);
 }
-
 body.dark-theme #theme-toggle > img:nth-child(1){
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(calc(-50% - 30px), -50%);
+}
+
+#language-toggle{
+    overflow: hidden;
+    position: relative;
+    color: var(--text-light);
+}
+#language-toggle > div{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: transform 0.2s;
+}
+html:not(:lang(fr)) #language-toggle > div:nth-child(2){
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(calc(-50% + 30px), -50%);
+}
+html:lang(fr) #language-toggle > div:nth-child(1){
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(calc(-50% - 30px), -50%);
+}
+
+html:lang(fr) *:lang(en):not(html){
+    display: none;
+}
+html:lang(en) *:lang(fr):not(html){
+    display: none;
 }
