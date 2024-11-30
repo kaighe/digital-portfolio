@@ -108,4 +108,11 @@ function frame(){
     requestAnimationFrame(frame);
 }
 
+setInterval(function(){
+    $(".serial-time").each(function(){
+        var now = new Date();
+        this.innerText = now.toISOString().split(".")[0];
+    })
+}, 1000);
+
 frame();

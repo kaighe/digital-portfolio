@@ -59,6 +59,27 @@ hr {
     height: 24px;
 }
 
+.serial-code-vert {
+    font-family: monospace;
+    position: absolute;
+    top: 5px;
+    right: 2px;
+    writing-mode: vertical-rl;
+    text-orientation: sideways;
+    color: var(--text-light);
+    font-size: 7pt;
+    transform: rotate(180deg);
+}
+
+.serial-code-hor{
+    font-family: monospace;
+    position: absolute;
+    top: 3px;
+    right: 4px;
+    color: var(--text-light);
+    font-size: 7pt;
+}
+
 body.dark-theme .invert-on-dark{
     filter: invert();
 }
@@ -193,15 +214,6 @@ body.dark-theme #boid-canvas{
     filter: invert();
 }
 
-#fps-counter {
-    position: absolute;
-    top: 0;
-    right: 0;
-    margin: 5px;
-    color: var(--text-light);
-    font-size: 9pt;
-}
-
 .mouse-follow{
     z-index: 1000;
     opacity: 0;
@@ -223,6 +235,7 @@ body.dark-theme #boid-canvas{
 }
 
 .content-box{
+    position: relative;
     padding-right: 20px;
     padding-left: 20px;
     border: 1px solid var(--color-primary);
@@ -256,20 +269,6 @@ body.dark-theme #boid-canvas{
     text-align: center;
     margin-top: 75px;
     font-size: 11pt;
-}
-.skill-time:before{
-    content: ">>> ";
-}
-.skill-time{
-    font-family: monospace;
-    position: absolute;
-    bottom: 10px;
-    right: 2px;
-    writing-mode: vertical-rl;
-    text-orientation: sideways;
-    color: var(--text-light);
-    font-size: 7pt;
-    transform: rotate(180deg);
 }
 
 #theme-toggle{

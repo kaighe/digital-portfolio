@@ -335,8 +335,8 @@ function loop() {
     lastUpdate = now;
     tick_count++;
 
-    if(dt != 0) fps = Math.round((fps + (1/dt - fps)*0.05)*10)/10;
-    $("#fps-counter")[0].innerText = fps+"fps";
+    if(dt != 0) fps = (fps + (1/dt - fps)*0.05);
+    $("#fps-counter")[0].innerText = Math.round(fps)+"fps";
 
     if(canvas.getBoundingClientRect(true).bottom > 0){
         tick(dt);
