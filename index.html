@@ -13,15 +13,12 @@
 
     <script type="module" src="theme_check.js"></script>
     <script type="module" src="language.js"></script>
-
-    <template id="template-skill-box">
-        <div class="skill-box">
-            Skill Name
-        </div>
-    </template>
 </head>
 
 <body class="notransition">
+    <div style="position: fixed; width: 15px; height: 15px; border: 1px solid var(--color-primary); border-radius: 10px; transform: translate(-50%, -50%);" class="mouse-follow" data-follow-strength="0.2"></div>
+    <div style="position: fixed; width: 8px; height: 8px; border: 1px solid var(--color-primary); border-radius: 10px; transform: translate(-50%, -50%);" class="mouse-follow" data-follow-strength="0.3"></div>
+
     <div id="nav-bar" class="top open">
         <img src="icons/menu.svg" id="nav-bar-icon"/>
         <div class="nav-bar-item" lang="en">Home</div>
@@ -45,9 +42,9 @@
         <h1 class="flipboard-text" style="margin-bottom: 0;">
             <div class="socials-picker">
                 <img class="socials-picker-icon" src="icons/link.svg" alt="">
-                <a title="Github" href="https://github.com/kaighe"><img style="width: 20px; height:20px;" src="icons/github_mark.svg" alt=""></a>
-                <a title="Instagram" href="https://www.instagram.com/kai_something/"><img style="width: 20px; height:20px;" src="icons/instagram.svg" alt=""></a>
-                <a title="Old Portfolio" href="https://old.kaialbertson.ca"><img class="icon" src="icons/history.svg" alt=""></a>
+                <a title="Github" target=”_blank” href="https://github.com/kaighe"><img style="width: 20px; height:20px;" src="icons/social/github_mark.svg" alt=""></a>
+                <a title="Linkedin" target=”_blank” href="https://www.linkedin.com/in/kai-albertson-739461232/"><img style="width: 19px; height:19px;" src="icons/social/linkedin.png" alt=""></a>
+                <a title="Old Portfolio" target=”_blank” href="https://old.kaialbertson.ca"><img class="icon" src="icons/history.svg" alt=""></a>
             </div>
             <span>K</span><span>a</span><span>i</span> <span>A</span><span>l</span><span>b</span><span>e</span><span>r</span><span>t</span><span>s</span><span>o</span><span>n</span>
         </h1>
@@ -79,41 +76,43 @@
     </div>
 
     <div id="main-body">
-        <h1 lang="en">Proficient technologies</h1>
-        <h1 lang="fr">Technologies compétentes</h1>
+        <h1 lang="en" style="text-align: center;">Proficient technologies</h1>
+        <h1 lang="fr" style="text-align: center;">Technologies compétentes</h1>
         <div id="skill-holder">
             <div class="skill-box">
+                <img style="width: 70px; height: 70px;" src="icons/languages/python.png" alt="">
                 <div class="skill-name">Python</div>
                 <div class="skill-time">11 <span lang="en">years</span><span lang="fr">années</span></div>
             </div>
             <div class="skill-box">
+                <img src="icons/languages/csharp.png" alt="">
                 <div class="skill-name">C#</div>
                 <div class="skill-time">4 <span lang="en">years</span><span lang="fr">années</span></div>
             </div>
             <div class="skill-box">
+                <img src="icons/languages/cpp.png" alt="">
                 <div class="skill-name">C++</div>
                 <div class="skill-time">3 <span lang="en">years</span><span lang="fr">années</span></div>
             </div>
             <div class="skill-box">
-                <div class="skill-name">HTML</div>
+                <img src="icons/languages/html.png" alt="">
+                <div class="skill-name">HTML/CSS</div>
                 <div class="skill-time">4 <span lang="en">years</span><span lang="fr">années</span></div>
             </div>
             <div class="skill-box">
-                <div class="skill-name">CSS</div>
-                <div class="skill-time">4 <span lang="en">years</span><span lang="fr">années</span></div>
-            </div>
-            <div class="skill-box">
+                <img src="icons/languages/javascript.png" alt="">
                 <div class="skill-name">JavaScript</div>
                 <div class="skill-time">4 <span lang="en">years</span><span lang="fr">années</span></div>
             </div>
             <div class="skill-box">
+                <img src="icons/languages/git.png" alt="">
                 <div class="skill-name">Git</div>
                 <div class="skill-time">6 <span lang="en">years</span><span lang="fr">années</span></div>
             </div>
             <div class="skill-box">
-                <div class="skill-name" lang="en">AVR Assembly</div>
-                <div class="skill-name" lang="fr">Assemblage AVR</div>
-                <div class="skill-time">1 <span lang="en">years</span><span lang="fr">an</span></div>
+                <img class="invert-on-dark" src="icons/languages/avr.png" alt="">
+                <div style="margin-top: 67px; font-size: 9pt;" class="skill-name">AVR <br> Assembly</div>
+                <div class="skill-time">1 <span lang="en">years</span><span lang="fr">années</span></div>
             </div>
         </div>
         <div class="content-box">

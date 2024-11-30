@@ -22,7 +22,7 @@ body.dark-theme{
     --background-secondary: #252526;
     --text-primary: #d2d2d2;
     --text-secondary: #007acc;
-    --text-light: #7a7a7a;
+    --text-light: #8a8a8a;
     --text-selection: #69a2d4;
     --color-primary: #646464;
     --button-highlight: #373737;
@@ -57,6 +57,10 @@ hr {
 .icon {
     width: 24px;
     height: 24px;
+}
+
+body.dark-theme .invert-on-dark{
+    filter: invert();
 }
 
 #nav-bar {
@@ -199,14 +203,14 @@ body.dark-theme #boid-canvas{
 }
 
 .mouse-follow{
-    z-index: 100;
+    z-index: 1000;
     opacity: 0;
     transition: opacity 0.5s;
     pointer-events: none;
 }
 
 .mouse-follow.mouse-onscreen{
-    opacity: 20%;
+    opacity: 70%;
 }
 
 #main-body{
@@ -225,55 +229,47 @@ body.dark-theme #boid-canvas{
     border-radius: 7px;
 }
 
-@media (min-width: 905px) {
-    #skill-holder{
-        display: grid;
-        gap: 10px;
-        grid-template-columns: 1fr 1fr 1fr 1fr;
-        grid-template-rows: 1fr 1fr;
-        padding-bottom: 60px;
-    }
-}
-@media (max-width: 905px) {
-    #skill-holder{
-        display: grid;
-        gap: 10px;
-        grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1fr 1fr 1fr 1fr;
-        padding-bottom: 60px;
-    }
-}
-@media (max-width: 455px) {
-    #skill-holder{
-        display: grid;
-        gap: 10px;
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-        padding-bottom: 60px;
-    }
+#skill-holder{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 25px;
+    padding-bottom: 60px;
 }
 
 .skill-box{
-    display: flex;
-    justify-content: space-between;
-    padding: 8px;
+    position: relative;
+    width: 100px;
+    height: 100px;
     border: 1px solid var(--color-primary);
     border-radius: 7px;
-    transition: transform 0.2s;
-    min-width: 175px;
-}
-
-body:not(.mobile) .skill-box:hover{
-    transform: scale(105%);
-}
-
-.skill-name{
-    font-size: 14pt;
-}
-
-.skill-time{
-    text-align: right;
-    color: var(--text-light);
+    img{
+        position: absolute;
+        width: 60px;
+        height: 60px;
+        top: calc(50% - 10px);
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    .skill-name{
+        text-align: center;
+        margin-top: 75px;
+        font-size: 11pt;
+    }
+    .skill-time:before{
+        content: ">>> ";
+    }
+    .skill-time{
+        font-family: monospace;
+        position: absolute;
+        bottom: 10px;
+        right: 2px;
+        writing-mode: vertical-rl;
+        text-orientation: sideways;
+        color: var(--text-light);
+        font-size: 7pt;
+        transform: rotate(180deg);
+    }
 }
 
 #theme-toggle{
