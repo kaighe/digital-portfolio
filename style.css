@@ -243,33 +243,33 @@ body.dark-theme #boid-canvas{
     height: 100px;
     border: 1px solid var(--color-primary);
     border-radius: 7px;
-    img{
-        position: absolute;
-        width: 60px;
-        height: 60px;
-        top: calc(50% - 10px);
-        left: 50%;
-        transform: translate(-50%, -50%);
-    }
-    .skill-name{
-        text-align: center;
-        margin-top: 75px;
-        font-size: 11pt;
-    }
-    .skill-time:before{
-        content: ">>> ";
-    }
-    .skill-time{
-        font-family: monospace;
-        position: absolute;
-        bottom: 10px;
-        right: 2px;
-        writing-mode: vertical-rl;
-        text-orientation: sideways;
-        color: var(--text-light);
-        font-size: 7pt;
-        transform: rotate(180deg);
-    }
+}
+.skill-box>img{
+    position: absolute;
+    width: 60px;
+    height: 60px;
+    top: calc(50% - 10px);
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.skill-name{
+    text-align: center;
+    margin-top: 75px;
+    font-size: 11pt;
+}
+.skill-time:before{
+    content: ">>> ";
+}
+.skill-time{
+    font-family: monospace;
+    position: absolute;
+    bottom: 10px;
+    right: 2px;
+    writing-mode: vertical-rl;
+    text-orientation: sideways;
+    color: var(--text-light);
+    font-size: 7pt;
+    transform: rotate(180deg);
 }
 
 #theme-toggle{
