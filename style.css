@@ -16,6 +16,9 @@ body.light-theme{
     --button-highlight: #f2f2f2;
     --button-click: #dfdfdf;
 }
+body.light-theme .icon-secondary {
+    filter: invert(31%) sepia(72%) saturate(3554%) hue-rotate(186deg) brightness(93%) contrast(100%) saturate(70%);
+}
 
 body.dark-theme{
     --background-primary: #252526;
@@ -27,6 +30,9 @@ body.dark-theme{
     --color-primary: #646464;
     --button-highlight: #373737;
     --button-click: #484849;
+}
+body.dark-theme .icon-secondary {
+    filter: invert(65%) sepia(52%) saturate(1088%) hue-rotate(87deg) brightness(86%) contrast(76%) saturate(70%);
 }
 
 body {
@@ -52,11 +58,6 @@ hr {
 *::selection {
     color: var(--background-primary);
     background: var(--text-selection);
-}
-
-.icon {
-    width: 24px;
-    height: 24px;
 }
 
 .serial-code-vert {
