@@ -44,12 +44,20 @@ body.dark-theme .icon-secondary {
 }
 
 body {
+    margin: 0;
+    overflow: hidden;
     background-color: var(--background-primary);
     font-family: "Ubuntu", serif;
-    margin: 0;
     color: var(--text-primary);
 
     transition: background-color 0.5s, color 0.5s, border-color 0.5s;
+}
+#main-window{
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    overflow-y: scroll;
+    overflow-x: hidden;
 }
 
 p{
@@ -99,7 +107,7 @@ body.dark-theme .invert-on-dark{
     left: 15px;
     width: 50px;
     height: 50px;
-    z-index: 100;
+    z-index: 10;
 
     border: 1px solid var(--color-primary);
     border-radius: 25px;
@@ -446,6 +454,7 @@ html:lang(en) *:lang(fr):not(html){
 
 #project-view-block{
     position: fixed;
+    z-index: 100;
     width: 100%;
     height: 100%;
     top: 0;
@@ -458,6 +467,7 @@ html:lang(en) *:lang(fr):not(html){
 }
 #project-view{
     position: fixed;
+    z-index: 100;
     height: 70%;
     width: calc(min(900px, calc(100% - 100px)));
     top: 50%;

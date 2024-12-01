@@ -29,129 +29,131 @@
     <div style="position: fixed; border: 1px solid var(--color-primary); border-radius: 100px; transform: translate(-50%, -50%);" class="mouse-follow" data-size="15" data-follow-strength="0.2"></div>
     <div style="position: fixed; border: 1px solid var(--color-primary); border-radius: 100px; transform: translate(-50%, -50%);" class="mouse-follow" data-size="8" data-follow-strength="0.3"></div>
 
-    <div id="nav-bar" class="top open">
-        <img src="icons/menu.svg" id="nav-bar-icon"/>
-        <div class="nav-bar-item cursor-link" lang="en">Home</div>
-        <div class="nav-bar-item cursor-link" lang="fr">Accueil</div>
-        <div class="nav-bar-item cursor-link" lang="en">Projects</div>
-        <div class="nav-bar-item cursor-link" lang="fr">Projets</div>
-        <div class="nav-bar-item" id="theme-toggle" style="width: 24px; height: 24px;">
-            <img src="icons/light_mode.svg" class="notransition icon-secondary" alt="">
-            <img src="icons/dark_mode.svg" class="notransition icon-secondary" alt="">
-        </div>
-        <div class="nav-bar-item" id="language-toggle" style="width: 24px; height: 24px;">
-            <div>EN</div>
-            <div>FR</div>
-        </div>
-    </div>
-
-    <div id="landing">
-        <div class="serial-code-vert">// <span class="serial-time">0000-00-00T00:00:00</span> // <span id="fps-counter">60fps</span></div>
-        <p lang="en">Hey, I'm</p>
-        <p lang="fr">Salut, je suis</p>
-        <h1 class="flipboard-text" style="margin-bottom: 0;">
-            <div class="socials-picker">
-                <img class="socials-picker-icon icon-secondary" src="icons/link.svg" alt="">
-                <a class="cursor-link" title="Github" target=”_blank” href="https://github.com/kaighe"><img style="width: 20px; height:20px;" src="icons/social/github_mark.svg" alt=""></a>
-                <a class="cursor-link" title="Linkedin" target=”_blank” href="https://www.linkedin.com/in/kai-albertson-739461232/"><img style="width: 19px; height:19px;" src="icons/social/linkedin.png" alt=""></a>
-                <a class="cursor-link" title="Old Portfolio" target=”_blank” href="https://old.kaialbertson.ca"><img src="icons/history.svg" alt=""></a>
+    <div id="main-window">
+        <div id="nav-bar" class="top open">
+            <img src="icons/menu.svg" id="nav-bar-icon"/>
+            <div class="nav-bar-item cursor-link" lang="en">Home</div>
+            <div class="nav-bar-item cursor-link" lang="fr">Accueil</div>
+            <div class="nav-bar-item cursor-link" lang="en">Projects</div>
+            <div class="nav-bar-item cursor-link" lang="fr">Projets</div>
+            <div class="nav-bar-item" id="theme-toggle" style="width: 24px; height: 24px;">
+                <img src="icons/light_mode.svg" class="notransition icon-secondary" alt="">
+                <img src="icons/dark_mode.svg" class="notransition icon-secondary" alt="">
             </div>
-            <span>K</span><span>a</span><span>i</span> <span>A</span><span>l</span><span>b</span><span>e</span><span>r</span><span>t</span><span>s</span><span>o</span><span>n</span>
-        </h1>
-        <div class="rotating-text" style="margin-top: 0;" lang="en">
-            <div>
-                <p>Computer Science Student</p>
-                <p>Software Developer</p>
-                <p>Mountain Biker</p>
-                <p>Game Developer</p>
-                <p>Skiier</p>
-                <p>Front End Dev?</p>
-                <p>Really Cool Guy</p>
-                <p>Computer Science Student</p>
+            <div class="nav-bar-item" id="language-toggle" style="width: 24px; height: 24px;">
+                <div>EN</div>
+                <div>FR</div>
             </div>
         </div>
-        <div class="rotating-text" style="margin-top: 0;" lang="fr">
-            <div>
-                <p>Étudiant en informatique</p>
-                <p>Développeur de logiciels</p>
-                <p>Vététiste</p>
-                <p>Développeur de jeux</p>
-                <p>Skieur</p>
-                <p>Développeur front end?</p>
-                <p>Un gars vraiment cool</p>
-                <p>Étudiant en informatique</p>
+    
+        <div id="landing">
+            <div class="serial-code-vert">// <span class="serial-time">0000-00-00T00:00:00</span> // <span id="fps-counter">60fps</span></div>
+            <p lang="en">Hey, I'm</p>
+            <p lang="fr">Salut, je suis</p>
+            <h1 class="flipboard-text" style="margin-bottom: 0;">
+                <div class="socials-picker">
+                    <img class="socials-picker-icon icon-secondary" src="icons/link.svg" alt="">
+                    <a class="cursor-link" title="Github" target=”_blank” href="https://github.com/kaighe"><img style="width: 20px; height:20px;" src="icons/social/github_mark.svg" alt=""></a>
+                    <a class="cursor-link" title="Linkedin" target=”_blank” href="https://www.linkedin.com/in/kai-albertson-739461232/"><img style="width: 19px; height:19px;" src="icons/social/linkedin.png" alt=""></a>
+                    <a class="cursor-link" title="Old Portfolio" target=”_blank” href="https://old.kaialbertson.ca"><img src="icons/history.svg" alt=""></a>
+                </div>
+                <span>K</span><span>a</span><span>i</span> <span>A</span><span>l</span><span>b</span><span>e</span><span>r</span><span>t</span><span>s</span><span>o</span><span>n</span>
+            </h1>
+            <div class="rotating-text" style="margin-top: 0;" lang="en">
+                <div>
+                    <p>Computer Science Student</p>
+                    <p>Software Developer</p>
+                    <p>Mountain Biker</p>
+                    <p>Game Developer</p>
+                    <p>Skiier</p>
+                    <p>Front End Dev?</p>
+                    <p>Really Cool Guy</p>
+                    <p>Computer Science Student</p>
+                </div>
             </div>
+            <div class="rotating-text" style="margin-top: 0;" lang="fr">
+                <div>
+                    <p>Étudiant en informatique</p>
+                    <p>Développeur de logiciels</p>
+                    <p>Vététiste</p>
+                    <p>Développeur de jeux</p>
+                    <p>Skieur</p>
+                    <p>Développeur front end?</p>
+                    <p>Un gars vraiment cool</p>
+                    <p>Étudiant en informatique</p>
+                </div>
+            </div>
+            <canvas id="boid-canvas"></canvas>
         </div>
-        <canvas id="boid-canvas"></canvas>
-    </div>
-
-    <div id="main-body">
-        <h1 lang="en" style="text-align: center;">Proficient technologies</h1>
-        <h1 lang="fr" style="text-align: center;">Technologies compétentes</h1>
-        <div id="skill-holder">
-            <div class="skill-box">
-                <img style="width: 70px; height: 70px;" src="icons/languages/python.png" alt="">
-                <div class="skill-name">Python</div>
-                <div class="serial-code-vert">11 <span lang="en">years</span><span lang="fr">années</span> <<< </div>
+    
+        <div id="main-body">
+            <h1 lang="en" style="text-align: center;">Proficient technologies</h1>
+            <h1 lang="fr" style="text-align: center;">Technologies compétentes</h1>
+            <div id="skill-holder">
+                <div class="skill-box">
+                    <img style="width: 70px; height: 70px;" src="icons/languages/python.png" alt="">
+                    <div class="skill-name">Python</div>
+                    <div class="serial-code-vert">11 <span lang="en">years</span><span lang="fr">années</span> <<< </div>
+                </div>
+                <div class="skill-box">
+                    <img src="icons/languages/csharp.png" alt="">
+                    <div class="skill-name">C#</div>
+                    <div class="serial-code-vert">4 <span lang="en">years</span><span lang="fr">années</span> <<< </div>
+                </div>
+                <div class="skill-box">
+                    <img src="icons/languages/cpp.png" alt="">
+                    <div class="skill-name">C++</div>
+                    <div class="serial-code-vert">3 <span lang="en">years</span><span lang="fr">années</span> <<< </div>
+                </div>
+                <div class="skill-box">
+                    <img src="icons/languages/html.png" alt="">
+                    <div class="skill-name">HTML/CSS</div>
+                    <div class="serial-code-vert">4 <span lang="en">years</span><span lang="fr">années</span> <<< </div>
+                </div>
+                <div class="skill-box">
+                    <img src="icons/languages/javascript.png" alt="">
+                    <div class="skill-name">JavaScript</div>
+                    <div class="serial-code-vert">4 <span lang="en">years</span><span lang="fr">années</span> <<< </div>
+                </div>
+                <div class="skill-box">
+                    <img src="icons/languages/git.png" alt="">
+                    <div class="skill-name">Git</div>
+                    <div class="serial-code-vert">6 <span lang="en">years</span><span lang="fr">années</span> <<< </div>
+                </div>
+                <div class="skill-box">
+                    <img class="invert-on-dark" src="icons/languages/avr.png" alt="">
+                    <div style="margin-top: 67px; font-size: 9pt;" class="skill-name">AVR <br> Assembly</div>
+                    <div class="serial-code-vert">1 <span lang="en">year</span><span lang="fr">an</span> <<< </div>
+                </div>
             </div>
-            <div class="skill-box">
-                <img src="icons/languages/csharp.png" alt="">
-                <div class="skill-name">C#</div>
-                <div class="serial-code-vert">4 <span lang="en">years</span><span lang="fr">années</span> <<< </div>
+            <div class="content-box">
+                <h1 lang="en">About me</h1>
+                <h1 lang="fr">Sur moi</h1>
+                <span class="serial-code-hor">// about_me.md</span>
+                <hr>
+                <p lang="en">
+                    I am a Canadian second year computer science student at the University of 
+                    Victoria with 11 years of programming experience and a proficiency in 
+                    Python, although I pride myself on my ability to learn  new technology 
+                    extremely fast. I speak English natively and French fluently, have planned 
+                    and taught non-profit programming courses to elementary students, developed 
+                    educational tools used by several different schools, and have professional 
+                    work experience as a software developer.
+                </p>
+                <p lang="fr">
+                    Je suis un étudiant canadien en deuxième année d'informatique à l'Université de
+                    Victoria avec 11 ans d'expérience en programmation et une maîtrise de
+                    Python, mais je suis fier de ma capacité à apprendre de nouvelles technologies
+                    extrêmement rapidement. Je parle anglais comme langue maternelle et français couramment, j'ai planifié
+                    et enseigné des cours de programmation à but non lucratif à des élèves du primaire, développé
+                    des outils pédagogiques utilisés par plusieurs écoles différentes et j'ai une
+                    expérience professionnelle en tant que développeur de logiciels.
+                </p>
             </div>
-            <div class="skill-box">
-                <img src="icons/languages/cpp.png" alt="">
-                <div class="skill-name">C++</div>
-                <div class="serial-code-vert">3 <span lang="en">years</span><span lang="fr">années</span> <<< </div>
-            </div>
-            <div class="skill-box">
-                <img src="icons/languages/html.png" alt="">
-                <div class="skill-name">HTML/CSS</div>
-                <div class="serial-code-vert">4 <span lang="en">years</span><span lang="fr">années</span> <<< </div>
-            </div>
-            <div class="skill-box">
-                <img src="icons/languages/javascript.png" alt="">
-                <div class="skill-name">JavaScript</div>
-                <div class="serial-code-vert">4 <span lang="en">years</span><span lang="fr">années</span> <<< </div>
-            </div>
-            <div class="skill-box">
-                <img src="icons/languages/git.png" alt="">
-                <div class="skill-name">Git</div>
-                <div class="serial-code-vert">6 <span lang="en">years</span><span lang="fr">années</span> <<< </div>
-            </div>
-            <div class="skill-box">
-                <img class="invert-on-dark" src="icons/languages/avr.png" alt="">
-                <div style="margin-top: 67px; font-size: 9pt;" class="skill-name">AVR <br> Assembly</div>
-                <div class="serial-code-vert">1 <span lang="en">year</span><span lang="fr">an</span> <<< </div>
-            </div>
+    
+            <h1 lang="en" style="text-align: center; margin: 20px;">Projects</h1>
+            <div id="project-container"></div>
         </div>
-        <div class="content-box">
-            <h1 lang="en">About me</h1>
-            <h1 lang="fr">Sur moi</h1>
-            <span class="serial-code-hor">// about_me.md</span>
-            <hr>
-            <p lang="en">
-                I am a Canadian second year computer science student at the University of 
-                Victoria with 11 years of programming experience and a proficiency in 
-                Python, although I pride myself on my ability to learn  new technology 
-                extremely fast. I speak English natively and French fluently, have planned 
-                and taught non-profit programming courses to elementary students, developed 
-                educational tools used by several different schools, and have professional 
-                work experience as a software developer.
-            </p>
-            <p lang="fr">
-                Je suis un étudiant canadien en deuxième année d'informatique à l'Université de
-                Victoria avec 11 ans d'expérience en programmation et une maîtrise de
-                Python, mais je suis fier de ma capacité à apprendre de nouvelles technologies
-                extrêmement rapidement. Je parle anglais comme langue maternelle et français couramment, j'ai planifié
-                et enseigné des cours de programmation à but non lucratif à des élèves du primaire, développé
-                des outils pédagogiques utilisés par plusieurs écoles différentes et j'ai une
-                expérience professionnelle en tant que développeur de logiciels.
-            </p>
-        </div>
-
-        <h1 lang="en" style="text-align: center; margin: 20px;">Projects</h1>
-        <div id="project-container"></div>
     </div>
 
     <div id="project-view-block" onclick="close_project();"></div>

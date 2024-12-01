@@ -4,9 +4,9 @@ if(jQuery.browser.mobile){
     $(document.body).addClass("mobile");
 }
 
-$(window).scroll(function () {
+$("#main-window").scroll(function () {
     $("#dropdown-options").addClass("inactive");
-    if ($(document).scrollTop() < 30) {
+    if (this.scrollTop < 30) {
         $('#nav-bar').addClass("top");
         $('#nav-bar').addClass("open");
         $("#dropdown-options").addClass("inactive");
