@@ -461,6 +461,7 @@ html:lang(en) *:lang(fr):not(html){
     left: 0;
 
     backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
     opacity: 0;
     pointer-events: none;
     transition: opacity 0.3s;
