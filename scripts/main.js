@@ -97,14 +97,29 @@ function rotate_text(e){
 }
 
 function frame(){
+    var link_hover = false;
+    $(".cursor-link").each(function(){
+        if (this.matches(':hover')) {
+            link_hover = true;
+        }
+    })
     $(".mouse-follow").each(function(){
         // console.log(Number(this.dataset.followStrength));
         var cur_x = Number(this.style.left.slice(0, -2));
         var cur_y = Number(this.style.top.slice(0, -2));
+        var cur_size = Number(this.style.width.slice(0, -2));
 
         this.style.top = cur_y+(mouse_y-cur_y)*Number(this.dataset.followStrength)+"px";
         this.style.left = cur_x+(mouse_x-cur_x)*Number(this.dataset.followStrength)+"px";
+        if(!link_hover){
+            this.style.width = cur_size+(this.dataset.size-cur_size)*0.1+"px";
+            this.style.height = cur_size+(this.dataset.size-cur_size)*0.1+"px";
+        }else{
+            this.style.width = cur_size+(Number(this.dataset.size)+20-cur_size)*0.1+"px";
+            this.style.height = cur_size+(Number(this.dataset.size)+20-cur_size)*0.1+"px";
+        }
     })
+    
     requestAnimationFrame(frame);
 }
 

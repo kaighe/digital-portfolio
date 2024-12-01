@@ -387,3 +387,44 @@ html:lang(en) *:lang(fr):not(html){
     left: 50%;
     transform: translate(-49%, -50%);
 }
+
+#project-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.project-box{
+    position: relative;
+    height: 50px;
+    padding: 7px;
+
+    border: 1px solid var(--color-primary);
+    border-radius: 7px;
+    cursor: pointer;
+    transition: box-shadow 0.2s, transform 0.2s;
+}
+.project-box:hover{
+    box-shadow: 0 0 8px var(--text-secondary);
+    transform: scale(102%, 102%);
+}
+.project-box>p{
+    line-height: 1;
+    margin: 0;
+}
+
+.project-title{
+    padding-top: 5px;
+    padding-bottom: 4px;
+    font-size: 14pt;
+}
+.project-langs{
+    color: var(--text-secondary);
+}
+.project-date{
+    color: var(--text-light);
+    position: absolute;
+    top: 12px;
+    right: 7px;
+    font-size: 10pt;
+}

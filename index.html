@@ -13,18 +13,26 @@
 
     <script type="module" src="scripts/theme_check.js"></script>
     <script type="module" src="scripts/language.js"></script>
+
+    <template id="temp-project-box">
+        <div class="project-box">
+            <p class="project-title">Example Project</p>
+            <p class="project-language">Python, CSS, C#</p>
+            <p class="project-date">6/20/2022</p>
+        </div>
+    </template>
 </head>
 
 <body class="notransition">
-    <div style="position: fixed; width: 15px; height: 15px; border: 1px solid var(--color-primary); border-radius: 10px; transform: translate(-50%, -50%);" class="mouse-follow" data-follow-strength="0.2"></div>
-    <div style="position: fixed; width: 8px; height: 8px; border: 1px solid var(--color-primary); border-radius: 10px; transform: translate(-50%, -50%);" class="mouse-follow" data-follow-strength="0.3"></div>
+    <div style="position: fixed; border: 1px solid var(--color-primary); border-radius: 100px; transform: translate(-50%, -50%);" class="mouse-follow" data-size="15" data-follow-strength="0.2"></div>
+    <div style="position: fixed; border: 1px solid var(--color-primary); border-radius: 100px; transform: translate(-50%, -50%);" class="mouse-follow" data-size="8" data-follow-strength="0.3"></div>
 
     <div id="nav-bar" class="top open">
         <img src="icons/menu.svg" id="nav-bar-icon"/>
-        <div class="nav-bar-item" lang="en">Home</div>
-        <div class="nav-bar-item" lang="fr">Accueil</div>
-        <div class="nav-bar-item" lang="en">Projects</div>
-        <div class="nav-bar-item" lang="fr">Projets</div>
+        <div class="nav-bar-item cursor-link" lang="en">Home</div>
+        <div class="nav-bar-item cursor-link" lang="fr">Accueil</div>
+        <div class="nav-bar-item cursor-link" lang="en">Projects</div>
+        <div class="nav-bar-item cursor-link" lang="fr">Projets</div>
         <div class="nav-bar-item" id="theme-toggle" style="width: 24px; height: 24px;">
             <img src="icons/light_mode.svg" class="notransition icon-secondary" alt="">
             <img src="icons/dark_mode.svg" class="notransition icon-secondary" alt="">
@@ -42,9 +50,9 @@
         <h1 class="flipboard-text" style="margin-bottom: 0;">
             <div class="socials-picker">
                 <img class="socials-picker-icon icon-secondary" src="icons/link.svg" alt="">
-                <a title="Github" target=”_blank” href="https://github.com/kaighe"><img style="width: 20px; height:20px;" src="icons/social/github_mark.svg" alt=""></a>
-                <a title="Linkedin" target=”_blank” href="https://www.linkedin.com/in/kai-albertson-739461232/"><img style="width: 19px; height:19px;" src="icons/social/linkedin.png" alt=""></a>
-                <a title="Old Portfolio" target=”_blank” href="https://old.kaialbertson.ca"><img src="icons/history.svg" alt=""></a>
+                <a class="cursor-link" title="Github" target=”_blank” href="https://github.com/kaighe"><img style="width: 20px; height:20px;" src="icons/social/github_mark.svg" alt=""></a>
+                <a class="cursor-link" title="Linkedin" target=”_blank” href="https://www.linkedin.com/in/kai-albertson-739461232/"><img style="width: 19px; height:19px;" src="icons/social/linkedin.png" alt=""></a>
+                <a class="cursor-link" title="Old Portfolio" target=”_blank” href="https://old.kaialbertson.ca"><img src="icons/history.svg" alt=""></a>
             </div>
             <span>K</span><span>a</span><span>i</span> <span>A</span><span>l</span><span>b</span><span>e</span><span>r</span><span>t</span><span>s</span><span>o</span><span>n</span>
         </h1>
@@ -139,6 +147,9 @@
                 expérience professionnelle en tant que développeur de logiciels.
             </p>
         </div>
+
+        <h1 lang="en" style="text-align: center; margin: 20px;">Projects</h1>
+        <div id="project-container"></div>
     </div>
 
     <script type="module" src="scripts/main.js"></script>

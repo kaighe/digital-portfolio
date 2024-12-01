@@ -1,5 +1,20 @@
-function add_project(project){
-    console.log(project);
+const Project = ({ title, languages, date }) => `
+<div class="project-box cursor-link">
+    <p class="project-title">${title}</p>
+    <p class="project-langs">${languages}</p>
+    <p class="project-date">${date}</p>
+</div>
+`;
+
+function add_project(project, parent){
+    var element = document.createElement('div');
+    element.innerHTML = Project({
+        "title": project.title,
+        "languages": project.langs,
+        "date": project.date
+    });
+
+    parent.appendChild(element.children[0]);
 }
 
 async function get_projects(file) {
@@ -11,7 +26,7 @@ async function get_projects(file) {
         var project = await response.json();
 
         project.id = projects[i];
-        add_project(project);
+        add_project(project, $("#project-container")[0]);
     }
 }
 
