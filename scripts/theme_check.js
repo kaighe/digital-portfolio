@@ -1,10 +1,5 @@
-const prefersDarkScheme = window.matchMedia("(prefers-color-scheme: dark)").matches;
 if(localStorage["theme"] == undefined){
-    if(prefersDarkScheme){
-        localStorage["theme"] = "dark";
-    }else{
-        localStorage["theme"] = "light";
-    }
+    localStorage["theme"] = "dark";
 }
 
 if(localStorage["theme"] == "dark"){
