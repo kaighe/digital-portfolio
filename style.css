@@ -1,3 +1,11 @@
+::-webkit-scrollbar{
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb{
+    background-color: var(--background-secondary);
+}
+
 .notransition {
     -webkit-transition: none !important;
     -moz-transition: none !important;
@@ -7,7 +15,7 @@
 
 body.light-theme{
     --background-primary: #FFFFFF;
-    --background-secondary: #FFFFFF;
+    --background-secondary: #eeeeee;
     --text-primary: #020817;
     --text-secondary: #007acc;
     --text-light: #5c5c5c;
@@ -22,7 +30,7 @@ body.light-theme .icon-secondary {
 
 body.dark-theme{
     --background-primary: #252526;
-    --background-secondary: #252526;
+    --background-secondary: #3b3b3b;
     --text-primary: #d2d2d2;
     --text-secondary: #21bb5c;
     --text-light: #8a8a8a;
@@ -393,6 +401,13 @@ html:lang(en) *:lang(fr):not(html){
     grid-template-columns: 1fr 1fr;
     gap: 20px;
 }
+@media (max-width:880px) {
+    #project-container{
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+}
 
 .project-box{
     position: relative;
@@ -427,4 +442,43 @@ html:lang(en) *:lang(fr):not(html){
     top: 12px;
     right: 7px;
     font-size: 10pt;
+}
+
+#project-view-block{
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+
+    backdrop-filter: blur(10px);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s;
+}
+#project-view{
+    position: fixed;
+    height: 70%;
+    width: calc(min(900px, calc(100% - 100px)));
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(70%);
+    overflow-y: auto;
+
+    background-color: var(--background-primary);
+    border: 1px solid var(--color-primary);
+    border-radius: 7px;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+#project-view.open{
+    transform: translate(-50%, -50%) scale(100%);
+    opacity: 100%;
+    pointer-events: all;
+}
+#project-view-block.open{
+    opacity: 100%;
+    pointer-events: all;
 }

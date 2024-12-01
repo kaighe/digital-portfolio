@@ -6,7 +6,9 @@
     <title>Kai Albertson</title>
 
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="markdown_style.css">
     <script src="scripts/jquery-3.7.1.min.js"></script>
+    <script src="scripts/marked.min.js"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
@@ -152,8 +154,11 @@
         <div id="project-container"></div>
     </div>
 
+    <div id="project-view-block" onclick="close_project();"></div>
+    <div id="project-view" class="markdown-container"></div>
+
     <script type="module" src="scripts/main.js"></script>
     <script type="module" src="scripts/boids.js"></script>
-    <script type="module" src="scripts/projects.js"></script>
+    <script src="scripts/projects.js"></script>
 </body>
 </html>

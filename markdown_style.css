@@ -1,0 +1,49 @@
+.markdown-container{
+    padding: 40px;
+}
+
+.markdown-container a{
+    display: inline-block;
+    color: var(--text-secondary);
+    text-decoration: none;
+    transform: translate(0, 1px);
+}
+.markdown-container a:hover{
+    text-underline-offset: 1px;
+    text-decoration: underline;
+}
+
+.markdown-container code{
+    padding: 2px;
+    font-size: 14px;
+    background-color: var(--background-secondary);
+    border-radius: 3px;
+}
+.markdown-container pre>code{
+    padding: 0px;
+    background-color: none;
+    border-radius: 0px;
+}
+.markdown-container pre{
+    display: block;
+    padding: 15px;
+    font-size: 14px;
+    overflow-x: auto;
+    background-color: var(--background-secondary);
+    border: 0.1px solid var(--color-primary);
+    border-radius: 3px;
+}
+
+.markdown-container blockquote{
+    padding-left: 10px;
+    padding-right: 15px;
+    margin-left: 0;
+    background-color: var(--background-secondary);
+    border-left: 5px solid var(--color-primary);
+    border-radius: 3px;
+}
+
+.markdown-container h1,h2{
+    padding-bottom: 8px;
+    border-bottom: 1px solid var(--color-primary);
+}
