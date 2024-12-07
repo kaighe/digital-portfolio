@@ -5,18 +5,29 @@ const Project = ({ title, languages, date, id }) => `
     <p class="project-date">${date}</p>
 </div>
 `;
+const reader = new commonmark.Parser();
+const writer = new commonmark.HtmlRenderer();
 
 async function open_project(id){
     var response = await fetch("projects/"+id+"/page.md");
     var text = await response.text();
-    $("#project-view")[0].innerHTML = marked.parse(text);
+    var parsed = reader.parse(text);
+    $("#project-view")[0].innerHTML = writer.render(parsed);
     $("#project-view").addClass("open");
     $("#project-view-block").addClass("open");
+
+    var url = new URL(window.location.href);
+    url.searchParams.set("project", id);
+    window.history.replaceState(null, document.title, url.href)
 }
 
 function close_project(){
     $("#project-view").removeClass("open");
     $("#project-view-block").removeClass("open");
+
+    var url = new URL(window.location.href);
+    url.searchParams.delete("project");
+    window.history.replaceState(null, document.title, url.href)
 }
 
 function add_project(project, parent){
@@ -45,3 +56,9 @@ async function get_projects(file) {
 }
 
 get_projects();
+
+var url = new URL(window.location.href);
+var project = url.searchParams.get("project");
+if(project != null){
+    open_project(project);
+}

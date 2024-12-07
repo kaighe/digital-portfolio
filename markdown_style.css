@@ -15,9 +15,11 @@
 
 .markdown-container code{
     padding: 2px;
+    padding-left: 5px;
+    padding-right: 5px;
     font-size: 14px;
     background-color: var(--background-secondary);
-    border-radius: 3px;
+    border-radius: 4px;
 }
 .markdown-container pre>code{
     padding: 0px;
@@ -35,10 +37,11 @@
 }
 
 .markdown-container blockquote{
+    color: var(--text-light);
     padding-left: 10px;
     padding-right: 15px;
     margin-left: 0;
-    background-color: var(--background-secondary);
+    /* background-color: var(--background-secondary); */
     border-left: 5px solid var(--color-primary);
     border-radius: 3px;
 }
