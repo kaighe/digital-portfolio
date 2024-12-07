@@ -13,6 +13,7 @@ async function open_project(id){
     var text = await response.text();
     var parsed = reader.parse(text);
     $("#project-view")[0].innerHTML = writer.render(parsed);
+    $("#project-view a").each(function(){ this.target = "_blank"; });
     $("#project-view").addClass("open");
     $("#project-view-block").addClass("open");
 

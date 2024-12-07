@@ -1,8 +1,8 @@
 # Mots Mechants
 > *A french language learning fighting game.*
 >
-> [`Github`](https://github.com/kaighe/MotsMechants){:target="_blank"}
-> [`Game`](https://motsmechants.kaialbertson.ca/){:target="_blank"}
+> [`Github`](https://github.com/kaighe/MotsMechants)
+> [`Game`](https://motsmechants.kaialbertson.ca/)
 
 This is probably one of my favorite projects. Its a fighting game where you use french insults to deal damage. I made it as an assignment for my grade 11 french class in around 1 month. It supports online multiplayer with a code system to join lobbies. I think the reason I love this project so much is because it can be used in an educational environment, and seeing my project being used to help others is really nice. Unfortunatly, I cant afford to keep the servers running myself, so the game is not playable at the moment.
 
