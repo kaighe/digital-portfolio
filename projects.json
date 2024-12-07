@@ -1,12 +1,12 @@
 [
-    "boogie",
-    "code_graph",
-    "gpx_obj_converter",
-    "here_come_the_frogs",
-    "mine_path",
     "mots_mechants",
-    "snek_script",
-    "sot_fisher",
+    "mine_path",
     "truth_tables",
-    "wave_function_collapse"
+    "boogie",
+    "wave_function_collapse",
+    "code_graph",
+    "snek_script",
+    "gpx_obj_converter",
+    "sot_fisher",
+    "here_come_the_frogs",
 ]
