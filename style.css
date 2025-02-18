@@ -431,6 +431,11 @@ html:lang(en) *:lang(fr):not(html){
     box-shadow: 0 0 8px var(--text-secondary);
     transform: scale(102%, 102%);
 }
+.project-box:active{
+    box-shadow: 0 0 15px var(--text-secondary);
+    transform: scale(100%, 100%);
+    transition: box-shadow 0.1s, transform 0.1s;
+}
 .project-box>p{
     line-height: 1;
     margin: 0;
