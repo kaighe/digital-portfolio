@@ -70,6 +70,15 @@ $("#skill-container").each(function(){
     this.appendChild(skill_box_template.content.cloneNode(true));
 });
 
+$(".skill-box > .serial-code-vert").each(function(){
+    let date = Date.parse(this.getAttribute("data-start-date"));
+    if(date){
+        let time = (Date.now() - date) / 31536000000;
+        var textNode = document.createTextNode(Math.floor(time) + " ");
+        this.replaceChild(textNode, this.firstChild);
+    }
+})
+
 function flip(e, length, letter){
     for(var i = 0; i < length/20; i++){
         setTimeout(randomize_letter, i*20, e);

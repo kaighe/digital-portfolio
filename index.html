@@ -12,10 +12,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Ubuntu&display=swap" rel="stylesheet">
-
+    
+    <script type="module" src="scripts/template.js"></script>
     <script type="module" src="scripts/theme_check.js"></script>
     <script type="module" src="scripts/language.js"></script>
-
+    
     <template id="temp-project-box">
         <div class="project-box">
             <p class="project-title">Example Project</p>
@@ -93,32 +94,32 @@
                 <div class="skill-box">
                     <img style="width: 70px; height: 70px;" src="icons/languages/python.png" alt="">
                     <div class="skill-name">Python</div>
-                    <div class="serial-code-vert">11 <span lang="en">years</span><span lang="fr">années</span> <<< </div>
+                    <div class="serial-code-vert" data-start-date="2013-01-01">11 <span lang="en">years</span><span lang="fr">années</span> <<< </div>
                 </div>
                 <div class="skill-box">
                     <img src="icons/languages/csharp.png" alt="">
                     <div class="skill-name">C#</div>
-                    <div class="serial-code-vert">4 <span lang="en">years</span><span lang="fr">années</span> <<< </div>
+                    <div class="serial-code-vert" data-start-date="2018-01-01">4 <span lang="en">years</span><span lang="fr">années</span> <<< </div>
                 </div>
                 <div class="skill-box">
                     <img src="icons/languages/cpp.png" alt="">
                     <div class="skill-name">C++</div>
-                    <div class="serial-code-vert">3 <span lang="en">years</span><span lang="fr">années</span> <<< </div>
+                    <div class="serial-code-vert" data-start-date="2021-01-01">3 <span lang="en">years</span><span lang="fr">années</span> <<< </div>
                 </div>
                 <div class="skill-box">
                     <img src="icons/languages/html.png" alt="">
                     <div class="skill-name">HTML/CSS</div>
-                    <div class="serial-code-vert">4 <span lang="en">years</span><span lang="fr">années</span> <<< </div>
+                    <div class="serial-code-vert" data-start-date="2020-01-01">4 <span lang="en">years</span><span lang="fr">années</span> <<< </div>
                 </div>
                 <div class="skill-box">
                     <img src="icons/languages/javascript.png" alt="">
                     <div class="skill-name">JavaScript</div>
-                    <div class="serial-code-vert">4 <span lang="en">years</span><span lang="fr">années</span> <<< </div>
+                    <div class="serial-code-vert" data-start-date="2020-01-01">4 <span lang="en">years</span><span lang="fr">années</span> <<< </div>
                 </div>
                 <div class="skill-box">
                     <img src="icons/languages/git.png" alt="">
                     <div class="skill-name">Git</div>
-                    <div class="serial-code-vert">6 <span lang="en">years</span><span lang="fr">années</span> <<< </div>
+                    <div class="serial-code-vert" data-start-date="2019-01-01">6 <span lang="en">years</span><span lang="fr">années</span> <<< </div>
                 </div>
                 <div class="skill-box">
                     <img class="invert-on-dark" src="icons/languages/avr.png" alt="">
@@ -133,7 +134,7 @@
                 <hr>
                 <p lang="en">
                     I am a Canadian second year computer science student at the University of 
-                    Victoria with 11 years of programming experience and a proficiency in 
+                    Victoria with {{PROGRAMMING_YEARS}} years of programming experience and a proficiency in 
                     Python, although I pride myself on my ability to learn  new technology 
                     extremely fast. I speak English natively and French fluently, have planned 
                     and taught non-profit programming courses to elementary students, developed 
@@ -142,7 +143,7 @@
                 </p>
                 <p lang="fr">
                     Je suis un étudiant canadien en deuxième année d'informatique à l'Université de
-                    Victoria avec 11 ans d'expérience en programmation et une maîtrise de
+                    Victoria avec {{PROGRAMMING_YEARS}} ans d'expérience en programmation et une maîtrise de
                     Python, mais je suis fier de ma capacité à apprendre de nouvelles technologies
                     extrêmement rapidement. Je parle anglais comme langue maternelle et français couramment, j'ai planifié
                     et enseigné des cours de programmation à but non lucratif à des élèves du primaire, développé
