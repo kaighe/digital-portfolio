@@ -1,7 +1,7 @@
 # Boogie
 > *A Discord music playing bot*
 > 
-> [`Github`](https://github.com/kaighe/Boogie)
+> [`Github`](https://github.com/kaighe/boogie)
 
 I originally created boogie to replace the now deactivated bot [Groovy](https://groovy.bot/), although didn't end up using it for long as I could not afford to keep it running. It uses the Youtube API to search for music, the YoutubeDownload API to download the mp3 files, and the Discord API to handle commands and play the music, all written using Node.js.
 
