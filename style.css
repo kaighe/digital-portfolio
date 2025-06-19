@@ -422,6 +422,7 @@ html:lang(en) *:lang(fr):not(html){
     height: 50px;
     padding: 7px;
 
+    overflow: hidden;
     border: 1px solid var(--color-primary);
     border-radius: 7px;
     cursor: pointer;
@@ -441,10 +442,37 @@ html:lang(en) *:lang(fr):not(html){
     margin: 0;
 }
 
+.project-cover-slider{ 
+    position: absolute;
+    top: 0;
+    right: -10px;
+    z-index: -9;
+    height: 100%;
+    width: 200%;
+    transform-origin: 100% 50%;
+    transform: scale(4) skewX(-15deg);
+
+    box-shadow: 8px 0 5px 0 var(--background-primary);
+    background-color: var(--background-primary);
+    transition: right 0.25s;
+}
+
+.project-box:hover > .project-cover-slider{
+    right: 50%;
+}
+
+.project-cover{
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: -10;
+    height: 100%;
+}
 .project-title{
     padding-top: 5px;
     padding-bottom: 4px;
     font-size: 14pt;
+    text-shadow: -2px -2px 4px var(--background-primary), 2px -2px 4px var(--background-primary), -2px 2px 4px var(--background-primary), 2px 2px 4px var(--background-primary);
 }
 .project-langs{
     color: var(--text-secondary);
@@ -455,6 +483,10 @@ html:lang(en) *:lang(fr):not(html){
     top: 12px;
     right: 7px;
     font-size: 10pt;
+    transition: opacity 0.25s;
+}
+.project-box:hover > .project-date {
+    opacity: 0;
 }
 
 #project-view-block{

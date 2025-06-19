@@ -3,6 +3,8 @@ const Project = ({ title, languages, date, id }) => `
     <p class="project-title">${title}</p>
     <p class="project-langs">${languages}</p>
     <p class="project-date">${date}</p>
+    <div class="project-cover-slider"></div>
+    <img class="project-cover" src="/projects/${id}/cover.png"/>
 </div>
 `;
 const reader = new commonmark.Parser();
