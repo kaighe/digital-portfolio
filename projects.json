@@ -1,5 +1,6 @@
 [
     "mots_mechants",
+    "quadtree_boids",
     "mine_path",
     "truth_tables",
     "boogie",
