@@ -213,6 +213,11 @@ body:not(.mobile) .nav-bar-item:hover{
     margin-bottom: 10px;
 }
 
+@keyframes fade-in {
+    from { opacity: 0%; }
+    to { opacity: 100%; }
+}
+
 #boid-canvas {
     position: absolute;
     top: 0;
@@ -225,6 +230,9 @@ body:not(.mobile) .nav-bar-item:hover{
     overflow: hidden;
     mask-image: linear-gradient(0deg, rgba(255,255,255,0) 0px, rgba(255,255,255,1) 100px);
     filter: brightness(50%);
+
+    animation-name: fade-in;
+    animation-duration: 3s;
 }
 
 body.dark-theme #boid-canvas{
