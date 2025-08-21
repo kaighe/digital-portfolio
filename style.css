@@ -465,7 +465,7 @@ html:lang(en) *:lang(fr):not(html){
     transition: right 0.25s;
 }
 
-.project-box:hover > .project-cover-slider{
+.project-box:hover > .project-cover-slider, .project-box.show-cover > .project-cover-slider{
     right: 50%;
 }
 
@@ -493,7 +493,7 @@ html:lang(en) *:lang(fr):not(html){
     font-size: 10pt;
     transition: opacity 0.25s;
 }
-.project-box:hover > .project-date {
+.project-box:hover > .project-date, .project-box.show-cover > .project-date {
     opacity: 0;
 }
 

@@ -14,6 +14,19 @@ $("#main-window").scroll(function () {
         $('#nav-bar').removeClass("top");
         $('#nav-bar').removeClass("open");
     }
+
+    if(jQuery.browser.mobile){
+        $(".project-box").each(function(){
+            let rect = this.getBoundingClientRect();
+            let dist = window.innerHeight/2 - rect.y + rect.height/2;
+            let is_bottom = $("#main-window").scrollTop() + $("#main-window").height() >= $("#main-window").prop("scrollHeight") - 20;
+            if(Math.abs(dist) < window.innerHeight * 0.20 || (is_bottom && dist < 0)){
+                this.classList.add("show-cover");
+            }else{
+                this.classList.remove("show-cover");
+            }
+        })
+    }
 });
 
 $("#nav-bar").mouseenter(function(){
